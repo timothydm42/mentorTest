@@ -2,27 +2,75 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+    It means using html tag/element names that are meaningful to a human;
+    A human is able to get an idea of the rendered page and its organization.
+
 2. What is the box model?
+
+    Block level elements have three spatial properties which can be customized:
+    padding, border, and margin. Padding adjusts the position of content
+    within. Border is size of the box itself. Margin
+    controls how close other elements can be. Generally, the unit of
+    measurement is pixels.
 
 3. What is the difference between IDs and Classes?
 
+    Mainly, ids must be unique to a single element, while many elements may
+    use a single class.
+
 4. What does the z-index do?
+
+    In positioned elements, the z-index of each element decides the
+    stack order of those elements if they happen to overlap. An element
+    that has a higher z-index than another element will overlap the lower
+    z-indexed element.
 
 5. Summarize what the keyword 'this' is used for?
 
+    Keyword 'this' is used to control context, which functionally means
+    pointing code to the desired object.
+
 6. What is a callback?
+
+    It is a function passed to another function as a parameter.
 
 7. What is a closure?
 
+    A closure is a series of nested functions where the inner returned
+    function has access to the outer functions' scope.
+
 8. How does prototype work?
+
+    You define a piece of code as a prototype of an object. Now, each
+    object constructed using that object's constructor inherits
+    that piece of code.
 
 9. What is MVC?
 
+    Model View Controller. A paradigm in app development where model
+    means data/database, View means client UI, and Controller means
+    the liaison between the two.
+
 10. What is the component lifecycle?
+
+    Essentially, React components can mount, render, update, and unmount.
+    A lifecycle is made up of combinations of these. The functional
+    requirement of a given app may require one to interact with the
+    component before during or after any one of these stages using
+    lifecycle methods. For example, making http calls is best after
+    the mount phase of a component using the componentDidMount
+    lifecycle method. 
 
 11. What is REST?
 
+    Representational State Transfer. A representation of data available for
+    retrieval.
+
 12. Name three ways of getting data from the URL using express
+
+    req.params: '/api/users/:id'
+    req.query: '/api/users?name=Sam'
+    the path itself: '/api/admin'
 
 create table users (
 id serial,
@@ -34,8 +82,16 @@ email varchar(255)
 
 -Get all users:
 
+    select * from users;
+
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+
+    insert into users(name,email)values('your name','fake@fake.com');
 
 -Update the newly created user's name to 'Bobby Boy':
 
+    update users set name = 'Bobby Boy' where name = 'your name';
+
 -Delete the newly updated user:
+
+    delete from users where name is 'Bobby Boy';
